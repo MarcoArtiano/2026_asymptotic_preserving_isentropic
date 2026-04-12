@@ -22,7 +22,7 @@ This repository contains information and code to reproduce the results presented
 If you find these results useful, please cite the article mentioned above. If you use the implementations provided here, please **also** cite this repository as
 
 ```bibtex
-@misc{artiano2026asymptoticeRepo,
+@misc{artiano2026asymptoticRepo,
   title={Reproducibility repository for
          "{A}symptotic-Preserving and Well-Balanced Linearly Implicit IMEX Schemes
            for the Anelastic Limit of the Isentropic Euler Equations with Gravity"},
