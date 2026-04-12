@@ -999,7 +999,7 @@ function main(;
          #   count,
          #   Float64(DELTAT),
          #   Float64(time)
-        #)
+       # )
 
         # Zero out fluxes
         fill!(flxt, DATA1D(RealT))
@@ -1537,7 +1537,7 @@ end
 
 function compute_eoc()
     XNUMB_v = (20, 40, 80, 160, 320)
-    epsilon_v = (1e-2, 1e-3, 1e-4, 1e-5, 1e-6)
+    epsilon_v = (1e-4, 1e-5, 1e-6)
     RealT = Double64
 
     results = Dict()
