@@ -994,12 +994,12 @@ function main(;
             DELTAT = config.T - time
         end
 
-        @printf(
-            "\nStep %d: DELTAT = %.6e, time = %.6e\n",
-            count,
-            Float64(DELTAT),
-            Float64(time)
-        )
+        #@printf(
+        #    "\nStep %d: DELTAT = %.6e, time = %.6e\n",
+         #   count,
+         #   Float64(DELTAT),
+         #   Float64(time)
+        #)
 
         # Zero out fluxes
         fill!(flxt, DATA1D(RealT))
@@ -1674,3 +1674,8 @@ function plot_riemann_solution()
     axislegend(ax1, position = :rb, framevisible = true, labelsize = 25)
     save("results/riemann_solution.png", fig)
 end
+
+plot_comparison_wb_nwb_1()
+plot_comparison_wb_nwb_2()
+reproduce_well_balanced()
+compute_eoc()

@@ -2344,7 +2344,6 @@ function mach_plots()
     save("results/mach_1.png", h)
 end
 
-
 function eps_to_str(eps)
     s = @sprintf("%.g", eps)
 end
@@ -2399,3 +2398,6 @@ function plot_vorticity_kinetic_energy()
 
     save("results/plot_kinetic_vorticity.pdf", fig)
 end
+
+mach_plots()
+plot_vorticity_kinetic_energy()
