@@ -2364,6 +2364,7 @@ function plot_vorticity_kinetic_energy()
     labelsize = 22
     ticklabelsize = 24
     titlesize = 25
+    XNUMB = 200
     kwargs = (
         xlabelsize = labelsize,
         ylabelsize = labelsize,
