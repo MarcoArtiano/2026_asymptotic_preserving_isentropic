@@ -2024,8 +2024,8 @@ function main(;
                 MACH[i, j] = Mac
             end
         end
-        write_sdata(MACH, G, config, "MACH.dat")
-        println("\n Mach profile written to MACH.dat")
+        #write_sdata(MACH, G, config, "MACH.dat")
+        #println("\n Mach profile written to MACH.dat")
 
         # Compute vorticity 
         for j = config.JBEG:config.JEND
