@@ -6,7 +6,17 @@
 This repository contains information and code to reproduce the results presented in the article
 
 ```bibtex
-TODO
+@online{artiano2026asymptotic,
+  title={Asymptotic-Preserving and Well-Balanced Linearly Implicit IMEX Schemes
+         for the Anelastic Limit of the Isentropic Euler Equations with Gravity},
+  author={Artiano, Marco and Samantaray, Saurav
+            and Ranocha, Hendrik},
+  year={2026},
+  month={TODO},
+  eprint={TODO},
+  eprinttype={arxiv},
+  eprintclass={TODO}
+}
 ```
 
 If you find these results useful, please cite the article mentioned above. If you use the implementations provided here, please **also** cite this repository as
