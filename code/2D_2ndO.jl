@@ -2024,8 +2024,8 @@ function main(;
                 MACH[i, j] = Mac
             end
         end
-        #write_sdata(MACH, G, config, "MACH.dat")
-        #println("\n Mach profile written to MACH.dat")
+       # write_sdata(MACH, G, config, "MACH.dat")
+       # println("\n Mach profile written to MACH.dat")
 
         # Compute vorticity 
         for j = config.JBEG:config.JEND
@@ -2041,6 +2041,7 @@ function main(;
         end
         write_data_1D(VORT, G, config, "results/vorticity_$(eps)_$(XNUMB).dat")
         println("\n Vorticity profile written to vorticity.dat")
+	close(gptr)
     end
     return (; Q, G, Q0, Qunpe, Qdiff, MACH)
 end
@@ -2166,7 +2167,7 @@ function plot_mach(
     ticklabelsize = 13,
     levels = 13,
     factor = 0.1,
-    XNUMB = 30,
+    XNUMB = 200,
 )
     RealT = Double64
     sol = main(
@@ -2204,9 +2205,9 @@ function mach_plots()
     si = RealT(1e-1)
 
     h = Figure(size = (900, 700))
-    labelsize = 22
-    ticklabelsize = 24
-    titlesize = 25
+    labelsize = 40
+    ticklabelsize = 28
+    titlesize = 30
     XNUMB = 200
     kwargs = (
         xlabel = L"$x_1$",
@@ -2220,7 +2221,7 @@ function mach_plots()
     )
     title = L"$T = 0.0$"
     t_final = RealT(0.0)
-    Axis(h[1, 1]; kwargs..., title = title)
+    Axis(h[1, 1]; kwargs..., title = title, aspect = 1)
     plot_mach(
         t_final,
         epsilon,
@@ -2234,7 +2235,6 @@ function mach_plots()
     )
 
     save("results/mach_0.png", h)
-
     epsilon = RealT(1)
 
     h = Figure(size = (900, 700))
@@ -2254,7 +2254,7 @@ function mach_plots()
         titlesize = titlesize,
     )
     title = L"$T = 1.0$, $\varepsilon = 10^{-1}$"
-    Axis(h[1, 1]; kwargs..., title = title)
+    Axis(h[1, 1]; kwargs..., title = title, aspect = 1)
     plot_mach(
         t_final,
         epsilon,
@@ -2279,7 +2279,7 @@ function mach_plots()
         titlesize = titlesize,
     )
     title = L"$T = 1.0$, $\varepsilon = 10^{-2}$"
-    Axis(h[1, 3]; kwargs..., title = title)
+    Axis(h[1, 3]; kwargs..., title = title, aspect = 1)
     plot_mach(
         t_final,
         epsilon,
@@ -2304,7 +2304,7 @@ function mach_plots()
         titlesize = titlesize,
     )
     title = L"$T = 1.0$, $\varepsilon = 10^{-3}$"
-    Axis(h[2, 1]; kwargs..., title = title)
+    Axis(h[2, 1]; kwargs..., title = title, aspect = 1)
     plot_mach(
         t_final,
         epsilon,
@@ -2329,7 +2329,7 @@ function mach_plots()
         titlesize = titlesize,
     )
     title = L"$T = 1.0$, $\varepsilon = 10^{-4}$"
-    Axis(h[2, 3]; kwargs..., title = title)
+    Axis(h[2, 3]; kwargs..., title = title, aspect = 1)
     plot_mach(
         t_final,
         epsilon,
@@ -2353,18 +2353,17 @@ function load_dat(path)
     return data[:, 1], data[:, 2]
 end
 
-function plot_vorticity_kinetic_energy()
+function plot_vorticity_kinetic_energy(; XNUMB = 200)
 
     results_dir = "results"
 
     epsilons = [1e-1, 1e-2, 1e-3, 1e-4]
 
-    fig = Figure(size = (1100, 450), fontsize = 13)
+    fig = Figure(size = (1100, 400), fontsize = 13)
 
     labelsize = 22
     ticklabelsize = 24
     titlesize = 25
-    XNUMB = 200
     kwargs = (
         xlabelsize = labelsize,
         ylabelsize = labelsize,
@@ -2386,11 +2385,12 @@ function plot_vorticity_kinetic_energy()
         col = colors[i]
         estr = eps_to_str(epsilon)
         ls = linestyles[i]
-        ke_file = joinpath(results_dir, "kinetic_energy_$(estr)_200.dat")
+	ke_file = joinpath(results_dir, "kinetic_energy_$(estr)_$(XNUMB).dat")
+	@show ke_file
         t, ke = load_dat(ke_file)
         lines!(ax_ke, t, ke; color = col, linewidth = 2, label = label, linestyle = ls)
 
-        vor_file = joinpath(results_dir, "vorticity_$(estr)_200.dat")
+	vor_file = joinpath(results_dir, "vorticity_$(estr)_$(XNUMB).dat")
         x, vort = load_dat(vor_file)
         lines!(ax_vor, x, vort; color = col, linewidth = 2, label = label, linestyle = ls)
     end
@@ -2402,3 +2402,4 @@ end
 
 mach_plots()
 plot_vorticity_kinetic_energy()
+perturbed_plots()
