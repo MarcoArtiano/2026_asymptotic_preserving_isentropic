@@ -9,13 +9,13 @@ This repository contains information and code to reproduce the results presented
 @online{artiano2026asymptotic,
   title={Asymptotic-Preserving and Well-Balanced Linearly Implicit IMEX Schemes
          for the Anelastic Limit of the Isentropic Euler Equations with Gravity},
-  author={Artiano, Marco and Samantaray, Saurav
-            and Ranocha, Hendrik},
+  author={Artiano, Marco and Ranocha, Hendrik and Samantaray, Saurav},
   year={2026},
   month={TODO},
   eprint={TODO},
   eprinttype={arxiv},
-  eprintclass={TODO}
+  eprintclass={TODO},
+  doi={TODO}
 }
 ```
 
@@ -26,8 +26,7 @@ If you find these results useful, please cite the article mentioned above. If yo
   title={Reproducibility repository for
          "{A}symptotic-Preserving and Well-Balanced Linearly Implicit IMEX Schemes
            for the Anelastic Limit of the Isentropic Euler Equations with Gravity"},
-  author={Artiano, Marco and Samantaray, Saurav
-         and Ranocha, Hendrik},
+  author={Artiano, Marco and Ranocha, Hendrik and Samantaray, Saurav},
   year={2026},
   howpublished={\url{https://github.com/MarcoArtiano/2026_asymptotic_preserving_isentropic}},
   doi={TODO}
@@ -50,9 +49,9 @@ To reproduce the numerical experiments presented in this article, you need to in
 First, you need to download this repository, e.g., by cloning it with git or by downloading an archive via the GitHub interface. Then, you need to start Julia in the code directory of this repository and follow the instructions described in the README.md file therein.
 
 ## Authors
-- Marco Artiano
-- [Saurav Samantaray](https://sauravsray.github.io/)
+- Marco Artiano (Johannes Gutenberg University Mainz, Germany)
 - [Hendrik Ranocha](https://ranocha.de/) (Johannes Gutenberg University Mainz, Germany)
+- [Saurav Samantaray](https://sauravsray.github.io/) (Johannes Gutenberg University Mainz, Germany)
 
 ## License
 
