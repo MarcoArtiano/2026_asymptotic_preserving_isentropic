@@ -29,7 +29,7 @@ If you find these results useful, please cite the article mentioned above. If yo
   author={Artiano, Marco and Ranocha, Hendrik and Samantaray, Saurav},
   year={2026},
   howpublished={\url{https://github.com/MarcoArtiano/2026_asymptotic_preserving_isentropic}},
-  doi={TODO}
+  doi={10.5281/zenodo.19555933}
 }
 ```
 
