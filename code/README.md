@@ -15,12 +15,12 @@ julia> Pkg.instantiate()
 
 Run the following command to reproduce the results
 ```julia
-julia> include("1D_2ndO.jl")
+julia> include("1D_2ndO.jl") # takes roughly 1 hour
 ```
 
 ## 2D test cases
 
 Run the following command to reproduce the results
 ```julia
-julia> include("2D_2ndO.jl")
+julia> include("2D_2ndO.jl") # takes several hours
 ```
