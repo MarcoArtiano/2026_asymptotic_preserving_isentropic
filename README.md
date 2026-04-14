@@ -11,11 +11,10 @@ This repository contains information and code to reproduce the results presented
          for the Anelastic Limit of the Isentropic Euler Equations with Gravity},
   author={Artiano, Marco and Ranocha, Hendrik and Samantaray, Saurav},
   year={2026},
-  month={TODO},
-  eprint={TODO},
+  eprint={2604.11573},
   eprinttype={arxiv},
-  eprintclass={TODO},
-  doi={TODO}
+  primaryClass={math.NA},
+  doi={10.48550/arXiv.2604.11573}
 }
 ```
 
